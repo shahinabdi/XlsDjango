@@ -1,5 +1,5 @@
 from import_export import resources
-from .models import Data, MetaData
+from .models import MetaData, Data
 
 
 class MetaDataResource(resources.ModelResource):

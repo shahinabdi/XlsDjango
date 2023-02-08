@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 pandas = "*"
 django-import-export = "*"
+tzdata = "*"
 
 [dev-packages]
 

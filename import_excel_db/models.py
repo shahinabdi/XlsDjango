@@ -5,7 +5,7 @@ class MetaData(models.Model):
     #STATION INFO
     NameGroup = models.CharField(max_length=255, default='')
     Project = models.CharField(max_length=255, null=True)
-    Site = models.CharField(max_length=255,unique=True)
+    SiteName = models.CharField(max_length=255,unique=True)
     Country = models.CharField(max_length=255, null=True)
     Town = models.CharField(max_length=255, null=True)
     Code_INSEE = models.CharField(max_length=255, null=True)
@@ -19,7 +19,7 @@ class MetaData(models.Model):
     BV_INSPIRE = models.CharField(max_length=255, null=True)
     FG_INSPIRE = models.CharField(max_length=255, null=True)
     SNO_RENOIR = models.CharField(max_length=255, null=True)
-    Link_to_National_or_European_IR = models.CharField(max_length=255, null=True)
+    Link_to_National = models.CharField(max_length=255, null=True)
     #LAB INFO
     Laboratory_Name = models.CharField(max_length=255, null=True)
     First_Organism_Name = models.CharField(max_length=255, null=True)
@@ -108,7 +108,7 @@ class Data(models.Model):
     NH4_Unit = models.CharField(max_length=255, null=True)
     HCO = models.DecimalField(max_digits=18,decimal_places=10, null=True)
     HCO_Unit = models.CharField(max_length=255, null=True)
-    Site = models.ForeignKey('Site', on_delete='Cascade')
+    Site = models.CharField(max_length=255)
 
     def __str__(self) -> str:
         return self.Sample_Name
