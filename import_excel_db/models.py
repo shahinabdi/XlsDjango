@@ -7,7 +7,7 @@ class MetaData(models.Model):
     # STATION INFO
     NameGroup = models.CharField(max_length=255, default='')
     Project = models.CharField(max_length=255, null=True)
-    SiteName = models.CharField(max_length=255, unique=True)
+    SiteName = models.CharField(max_length=255, unique=True, primary_key=True)
     Country = models.CharField(max_length=255, null=True)
     Town = models.CharField(max_length=255, null=True)
     Code_INSEE = models.CharField(max_length=255, null=True)
@@ -46,11 +46,11 @@ class Data(models.Model):
     Date = models.DateTimeField()
     Begin_of_Period = models.DateTimeField()
     End_of_Period = models.DateTimeField()
+    Comment = models.CharField(max_length=255, default='')
     # O18
     O18 = models.DecimalField(max_digits=18, decimal_places=10, null=True)
     O18_Unit = models.CharField(max_length=255, null=True)
-    O18_Error = models.DecimalField(
-        max_digits=18, decimal_places=10, null=True)
+    O18_Error = models.DecimalField(max_digits=18, decimal_places=10, null=True)
     O18_Error_Unit = models.CharField(max_length=255, null=True)
     O18_Provider = models.CharField(max_length=255, null=True)
     O18_Measure_Equipement = models.CharField(max_length=255, null=True)
@@ -113,9 +113,9 @@ class Data(models.Model):
     Br_Unit = models.CharField(max_length=255, null=True)
     NH4 = models.DecimalField(max_digits=18, decimal_places=10, null=True)
     NH4_Unit = models.CharField(max_length=255, null=True)
-    HCO = models.DecimalField(max_digits=18, decimal_places=10, null=True)
-    HCO_Unit = models.CharField(max_length=255, null=True)
-
+    HCO3 = models.DecimalField(max_digits=18, decimal_places=10, null=True)
+    HCO3_Unit = models.CharField(max_length=255, null=True)
+    Site = models.ForeignKey(MetaData, on_delete=models.CASCADE)
     def __str__(self) -> str:
         return self.Sample_Name
 
