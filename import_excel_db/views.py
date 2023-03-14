@@ -367,7 +367,7 @@ def upload_file(request):
 
             # Verify the column names in the data sheet
             verify_data_cols(data)
-
+            
             # Save the data and metadata to the database
             updated_site, sitename = save_metadata_to_db(metadata)
             save_data_to_db(data, sitename)

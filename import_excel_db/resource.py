@@ -1,5 +1,6 @@
 from import_export import resources
 from .models import MetaData, Data
+from django.utils.translation import ugettext_lazy as _
 
 
 class MetaDataResource(resources.ModelResource):

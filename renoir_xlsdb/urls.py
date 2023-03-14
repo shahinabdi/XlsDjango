@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+admin.site.site_header = 'RENOIR ADMIN PAGE' 
+admin.site.site_title = 'RENOIR'
+admin.site.index_title = 'RENOIR'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('import_excel_db.urls')),
