@@ -34,4 +34,4 @@ class Data(admin.ModelAdmin):
 
     date_hierarchy = 'Date'
 
-    search_fields = ['Sample_Name__istartswith']
+    search_fields = ['Sample_Name__istartswith', 'Type_of_Rain_Collector__istartswith', 'H2__startswith']

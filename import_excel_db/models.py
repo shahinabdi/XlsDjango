@@ -43,7 +43,7 @@ class MetaData(models.Model):
         verbose_name_plural = 'Metadata'
 
 class Data(models.Model):
-    Sample_Name = models.CharField(max_length=255, default='')
+    Sample_Name = models.CharField(max_length=255, default='', unique=True)
     Media_Type = models.CharField(max_length=255, default='', blank=True)
     Type_of_Rain_Collector = models.CharField(max_length=255, default='', blank=True)
     Date = models.DateTimeField()
